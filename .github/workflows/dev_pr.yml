@@ -15,7 +15,7 @@ jobs:
           MYSQL_ROOT_PASSWORD: password
           MYSQL_DATABASE: db_test
         ports:
-          - 3306
+          - 33306:3306
         options: >-
           --health-cmd="mysqladmin ping"
           --health-interval=10s
@@ -73,7 +73,7 @@ jobs:
         env:
           DB_CONNECTION: mysql
           DB_DATABASE: db_test
-          DB_PORT: 3306
+          DB_PORT: 33306
           DB_USER: root
           DB_PASSWORD: password
         run: php artisan migrate
@@ -83,7 +83,7 @@ jobs:
         env:
           DB_CONNECTION: mysql
           DB_DATABASE: db_test
-          DB_PORT: 3306
+          DB_PORT: 33306
           DB_USER: root
           DB_PASSWORD: password
         run: vendor/phpunit/phpunit/phpunit
@@ -91,7 +91,7 @@ jobs:
         env:
           DB_CONNECTION: mysql
           DB_DATABASE: db_test
-          DB_PORT: 3306
+          DB_PORT: 33306
           DB_USER: root
           DB_PASSWORD: password
         run: php artisan test
